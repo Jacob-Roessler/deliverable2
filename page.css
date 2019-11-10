@@ -8,7 +8,6 @@ body {
   background-color: seashell;
 }
 
-/* Style the header */
 header {
   background: linear-gradient(to right, #fc5c7d, #6a82fb);
   color: mintcream;
@@ -18,25 +17,35 @@ header {
 header h1 {
   font-size: 40px;
 }
+.school {
+  position: absolute;
+  width: 200px;
+  height: auto;
+  left: 0px;
+  top: 0px;
+  padding: 5px;
+  visibility: hidden;
+}
 
-/* Style the top navigation bar */
 .nav {
   display: flex;
   overflow: hidden;
   background-color: black;
+  position: sticky;
+  top: 0;
+  Z-index: 1;
+
 }
 
-/* Style the nav links */
 .nav a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
-/* Change color on hover */
 .nav a:hover {
   background-color: #ddd;
   color: black;
@@ -44,7 +53,6 @@ header h1 {
 .row {
   display: flex;
 }
-/* Create three equal columns that floats next to each other */
 .column {
   background-color: #cf8bf3;
   float: left;
@@ -53,7 +61,6 @@ header h1 {
   margin: 10px;
 }
 
-/* Clear floats after the columns */
 .row:after {
   content: "";
   display: table;
@@ -68,7 +75,6 @@ header h1 {
   max-width: 300px;
 }
 
-/* Make the image to responsive */
 .image {
   display: block;
   width: 100%;
@@ -79,7 +85,8 @@ header h1 {
   width: 25%;
   height: 75%;
 }
-/* The overlay effect - lays on top of the container and over the image */
+
+/* Overlay Animation */
 .overlay {
   position: absolute;
   left: 2px;
@@ -147,8 +154,15 @@ input[type="submit"]:hover {
   }
 }
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
+/* Media Queries */
+@media only screen and (min-width: 999px) {
+  .school{
+    visibility: visible;
+  }
+
+}
+
+@media only screen and (max-width: 998px) and (min-width: 500px) {
   .row {
     flex-direction: column;
   }
@@ -157,5 +171,16 @@ input[type="submit"]:hover {
   }
   .nav {
     flex-direction: column;
+  }
+
+}
+
+@media only screen and (max-width: 499px) {
+  .nav {
+    flex-direction: column;
+  }
+  .navbar a {
+    float: none;
+    width: 100%;
   }
 }
