@@ -11,7 +11,9 @@
       <h1>About</h1>
       <p>Thank you for looking at the website!</p>
       <p>Here are the creators!</p>
-      <p></p>
+      <img class=school
+      src=https://www.stevens.edu/sites/all/themes/stevens/images/footer_logo@2x.png
+      alt="Stevens Instituite of Technology">
     </header>
 
     <div class="nav">
@@ -58,14 +60,26 @@
       </div>
     </div>
 
-    <div class="contact">
+    <div id="contact">
       <h1>Contact Us</h1>
-      <form action="#">
+      <form name="contact_form">
         <label for="name">First Name</label>
-        <input type="text" id="name" name="name" placeholder="Your name..." />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your name..."
+          required
+        />
 
         <label for="email">Email</label>
-        <input type="text" id="email" name="email" placeholder="Email..." />
+        <input
+          type="text"
+          id="email"
+          name="email"
+          placeholder="Email..."
+          required
+        />
 
         <label for="message">Message</label>
         <textarea
@@ -74,9 +88,15 @@
           cols="30"
           rows="10"
           placeholder="Your message..."
+          required
         ></textarea>
-        <input type="submit" value="submit" />
+        <input type="submit" value="submit" id="submit_form" />
       </form>
     </div>
+    <div id="modal" class="modal">
+      <div class="modal-content"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="form.js"></script>
   </body>
 </html>
