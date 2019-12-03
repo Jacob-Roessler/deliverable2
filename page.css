@@ -33,8 +33,7 @@ header h1 {
   background-color: black;
   position: sticky;
   top: 0;
-  Z-index: 1;
-
+  z-index: 1;
 }
 
 .nav a {
@@ -95,7 +94,7 @@ header h1 {
   color: white;
   font-size: 20px;
   text-align: left;
-  background-color: rgba(0,0,0,0.5); 
+  background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
 }
 .container:hover .overlay {
@@ -103,11 +102,11 @@ header h1 {
   opacity: 1;
 }
 
-.contact {
+#contact {
   padding: 10px;
 }
 
-.contact h1 {
+#contact h1 {
   text-align: center;
 }
 
@@ -120,6 +119,12 @@ textarea {
   box-sizing: border-box;
   margin: 12px 0px;
   resize: vertical;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  background-color: #ddd;
+  outline: none;
 }
 
 input[type="submit"] {
@@ -135,20 +140,57 @@ input[type="submit"]:hover {
   animation: pulse 0.5s ease-in 1;
 }
 .dropdown {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 16px;
   font-size: 16px;
   border: none;
 }
-.purchase{
-  background-color: #4CAF50;
+.purchase {
+  background-color: #4caf50;
   color: white;
   padding: 16px;
   font-size: 16px;
   border: none;
 }
-.clear{
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  text-align: center;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 20%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.clear {
   background-color: red;
   color: white;
   padding: 16px;
@@ -164,7 +206,7 @@ input[type="submit"]:hover {
   position: absolute;
   background-color: #f1f1f1;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 .cart-content p {
@@ -173,8 +215,9 @@ input[type="submit"]:hover {
   text-decoration: none;
   display: block;
 }
-.cart:hover .cart-content {display: block;}
-
+.cart:hover .cart-content {
+  display: block;
+}
 
 @keyframes check {
   from {
@@ -196,12 +239,46 @@ input[type="submit"]:hover {
   }
 }
 
-/* Media Queries */
-@media only screen and (min-width: 999px) {
-  .school{
-    visibility: visible;
+@keyframes shake {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 
+  0% {
+    background-color: #4caf50;
+  }
+  50% {
+    background-color: orangered;
+  }
+  100% {
+    background-color: #4caf50;
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-5px, 0, 0);
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  25%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(5px, 0, 0);
+    transform: translate3d(5px, 0, 0);
+  }
+}
+
+/* Media Queries */
+@media only screen and (min-width: 999px) {
+  .school {
+    visibility: visible;
+  }
 }
 
 @media only screen and (max-width: 998px) and (min-width: 500px) {
@@ -214,7 +291,6 @@ input[type="submit"]:hover {
   .nav {
     flex-direction: column;
   }
-
 }
 
 @media only screen and (max-width: 499px) {
