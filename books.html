@@ -29,86 +29,67 @@
       <div class="cart-content">
         <p>Items:</p>
         <ul></ul>
-        <p class="total">Total: $0.00</p>
+        <p id="total">Total: $0.00</p>
         <button type="button" class="clear">Clear Cart</button>
       </div>
     </div>
-
-    <div class="row">
-      <div class="column">
-        <h2>The Stinky Cheese Man</h2>
-        <div class="container">
-          <img class ="book"
-          src=https://images-na.ssl-images-amazon.com/images/I/91em2qUHQlL.jpg
-          alt="The Stinky Cheese Man">
-          <div class="overlay">
-            Status: <img class= "status"
-            src=https://cdn1.iconfinder.com/data/icons/vibrancie-action/30/action_049-checkmark-done-check-finish-512.png
-            alt='unavailable'>
-          </div>
-        </div>
-        <h3>Description</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit
-          amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget
-          elementum magna tristique. Quisque vehicula, risus eget aliquam
-          placerat, purus leo tincidunt eros, eget luctus quam orci in velit.
-          Praesent scelerisque tortor sed accumsan convallis.
-        </p>
-        <p class="price">Price: $10.99</p>
-        <button type="button" class="purchase">Add to Cart</button>
-      </div>
-
-      <div class="column">
-        <h2>Where's Waldo?</h2>
-        <div class="container">
-          <img class ="book"
-          src=https://images.penguinrandomhouse.com/cover/9781536211450
-          alt="Where's Waldo?">
-          <div class="overlay">
-            Status: <img class= "status"
-            src=https://www.freeiconspng.com/uploads/x-png-33.png alt="status">
-          </div>
-        </div>
-        <h3>Description</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit
-          amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget
-          elementum magna tristique. Quisque vehicula, risus eget aliquam
-          placerat, purus leo tincidunt eros, eget luctus quam orci in velit.
-          Praesent scelerisque tortor sed accumsan convallis.
-        </p>
-        <p class="price">Price: $19.99</p>
-      </div>
-
-      <div class="column">
-        <h2>The Cat in the Hat</h2>
-        <div class="container">
-          <img class ="book"
-          src=https://images-na.ssl-images-amazon.com/images/I/81drfTT9ZfL.jpg
-          alt="The Cat in the Hat">
-          <div class="overlay">
-            Status: <img class= "status"
-            src=https://cdn1.iconfinder.com/data/icons/vibrancie-action/30/action_049-checkmark-done-check-finish-512.png
-            alt="status">
-          </div>
-        </div>
-        <h3>Description</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit
-          amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget
-          elementum magna tristique. Quisque vehicula, risus eget aliquam
-          placerat, purus leo tincidunt eros, eget luctus quam orci in velit.
-          Praesent scelerisque tortor sed accumsan convallis.
-        </p>
-        <p class="price">Price: $24.99</p>
-        <button type="button" class="purchase">Add to Cart</button>
-      </div>
+    <div class="addbook">
+        <button id="addbook" type="button" class="clear">Add Book</button>
     </div>
-    <div id="modal" class="modal">
+    <div class="addbook">
+      <button id="resetbook" type="button" class="clear">Reset Books</button>
+    </div>
+
+    <div id="booklist" class="row">
+      
+      
+    </div>
+    <div id="bookform" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
-        <h2>Item already in cart!</h2>
+        <form name="contact_form">
+          <label for="title">Title of Book</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="Book Title..."
+            required
+          />
+  
+          <label for="price">Book Price</label>
+          <input
+            type="text"
+            id="price"
+            name="price"
+            placeholder="Ex: 5.49"
+            pattern="[0-9]+([\.,][0-9]+)?"
+            required
+          />
+
+          <input type="checkbox" name="status" id="status" value="yes">Available?<br><br>
+
+          <label>Book Image</label>
+          <select id = "imagelist">
+            <option value = "child">Children's Book</option>
+            <option value = "adult">Adult Book</option>
+            <option value = "mystery">Mystery Book</option>
+            <option value = "drama">Drama Book</option>
+          </select>
+  
+          <label for="description">Description</label>
+          <textarea
+            name="description"
+            id="description"
+            cols="30"
+            rows="10"
+            placeholder="Book description..."
+            required
+          ></textarea>
+          <input type="submit" value="submit" id="submit_form" />
+          <input type="reset" value="reset"/>
+
+        </form>
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
