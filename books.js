@@ -84,8 +84,10 @@ function buyBook(e){
   index = parseInt( index.substr(0,index.indexOf('.')) ) -1;
   book = bookList[index];
   if (cartList.includes(book)){
-    alert('Book already in cart');
-
+    $("#modal").css({ display: "block" });
+    $(".close").on("click", () => {
+      $("#modal").css({ display: "none" });
+    });
   }
   else{
     cartList.push(book);

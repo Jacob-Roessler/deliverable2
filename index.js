@@ -16,7 +16,7 @@ var HttpClient = function() {
     };
     anHttpRequest.onerror = err => {
       var p = document.createElement("p");
-      p.innerHTML = "Adblock usually causes facts to stop working";
+      p.innerHTML = "Facts not showing up? Adblock usually causes facts to stop working";
       document.getElementById("facts").append(p);
     };
 
@@ -25,10 +25,7 @@ var HttpClient = function() {
   };
 };
 var client = new HttpClient();
-client.get(`http://numbersapi.com/${parseInt(Math.random() * 500)}/`, function(
-  response
-) {
-  console.log(response);
+client.get(`http://numbersapi.com/${parseInt(Math.random() * 500)}/`, function(response) {
   var p = document.createElement("p");
   p.innerHTML = response;
   document.getElementById("facts").append(p);

@@ -122,7 +122,16 @@ textarea {
   margin: 12px 0px;
   resize: vertical;
 }
-
+input[type="date"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid darkgray;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 12px 0px;
+  resize: vertical;
+}
 input[type="text"]:focus,
 textarea:focus {
   background-color: #ddd;
