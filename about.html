@@ -74,10 +74,13 @@
 
         <label for="email">Email</label>
         <input
-          type="text"
+          type="email"
           id="email"
           name="email"
+          size="64"
+          maxlength="64"
           placeholder="Email..."
+          pattern=".+@\w+\.\w+"
           required
         />
 
@@ -92,10 +95,10 @@
         ></textarea>
 
         <label for="date">When would you like to hear from us?</label>
-        <input id='cDate' type="date" name="contactDate">
+        <input id="cDate" type="date" name="contactDate" required />
 
         <input type="submit" value="submit" id="submit_form" />
-        <input type="reset" value="reset"/>
+        <input type="reset" value="reset" />
       </form>
     </div>
     <div id="modal" class="modal">

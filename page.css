@@ -59,7 +59,6 @@ header h1 {
   width: 25%;
   padding: 10px;
   margin: 10px;
-
 }
 
 .row:after {
@@ -113,16 +112,9 @@ header h1 {
 }
 
 input[type="text"],
-textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid darkgray;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin: 12px 0px;
-  resize: vertical;
-}
 input[type="date"],
+input[type="email"],
+input[type="number"],
 textarea {
   width: 100%;
   padding: 10px;
@@ -138,7 +130,15 @@ textarea:focus {
   outline: none;
 }
 
-select{
+input[type="text"]:valid:not(:focus),
+input[type="date"]:valid:not(:focus),
+input[type="email"]:valid:not(:focus),
+input[type="number"]:valid:not(:focus),
+textarea:valid:not(:focus) {
+  background-color: lightgreen;
+}
+
+select {
   width: 100%;
   padding: 10px;
   border: 1px solid darkgray;
@@ -163,12 +163,15 @@ input[type="reset"] {
   border-radius: 4px;
 }
 
-
 input[type="submit"]:hover {
   background-color: #26c57b;
   animation: pulse 0.5s ease-in 1;
 }
 
+input[type="reset"]:hover {
+  background-color: darkred;
+  animation: pulse 0.5s ease-in 1;
+}
 
 .dropdown {
   background-color: #4caf50;
@@ -250,7 +253,7 @@ input[type="submit"]:hover {
 .cart:hover .cart-content {
   display: block;
 }
-.addbook{
+.addbook {
   position: relative;
   display: inline-block;
 }
